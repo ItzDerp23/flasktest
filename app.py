@@ -9,9 +9,9 @@ app = Flask(__name__)
 REPORTS_FILE = "reports.json"
 
 # --- Gmail config ---
-EMAIL_ADDRESS = "derp8782@gmail.com"
-EMAIL_PASSWORD = "kooy cxmh tyyy gjtj"  # use Gmail App Password
-ADMIN_EMAILS = ["derp8782@gmail.com"]    # admins who receive reports
+EMAIL_ADDRESS = os.getenv("EMAIL_ADDRESS")
+EMAIL_PASSWORD = os.getenv("EMAIL_PASSWORD")
+ADMIN_EMAILS = os.getenv("ADMIN_EMAILS").split(",")   # admins who receive reports
 
 # --- Load and save reports ---
 def load_reports():
