@@ -6,6 +6,7 @@ from email.mime.multipart import MIMEMultipart
 import os 
 from dotenv import load_dotenv
 
+
 app = Flask(__name__)
 REPORTS_FILE = "reports.json"
 
@@ -13,7 +14,7 @@ REPORTS_FILE = "reports.json"
 load_dotenv()
 EMAIL_ADDRESS = os.getenv("EMAIL_ADDRESS")
 EMAIL_PASSWORD = os.getenv("EMAIL_PASSWORD")
-ADMIN_EMAILS = os.getenv("ADMIN_EMAILS").split(",")   # admins who receive reports
+ADMIN_EMAILS = os.getenv("ADMIN_EMAILS").split(",")    # admins who receive reports
 
 # --- Load and save reports ---
 def load_reports():
